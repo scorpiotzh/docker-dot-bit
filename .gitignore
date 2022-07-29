@@ -20,3 +20,5 @@ docker-compose-database.yaml
 docker-compose-indexer.yaml
 /das-register
 docker-compose-register.yaml
+/das-pay
+docker-compose-pay.yaml
