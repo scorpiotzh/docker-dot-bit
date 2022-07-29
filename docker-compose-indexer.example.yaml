@@ -14,7 +14,7 @@ networks:
       name: bit-env_mynetwork
 
 services:
-  das-database:
+  das-account-indexer:
     container_name: das-indexer-svr
     build:
       context: ./das-account-indexer
