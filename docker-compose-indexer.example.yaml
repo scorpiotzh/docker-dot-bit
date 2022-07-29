@@ -15,20 +15,20 @@ networks:
 
 services:
   das-database:
-    container_name: das-database-svr
+    container_name: das-indexer-svr
     build:
-      context: ./das-database
+      context: ./das-account-indexer
       dockerfile: Dockerfile
-    image: das-database
+    image: das-account-indexer
     restart: always
     working_dir: /app
     entrypoint: [ "/app/das-database", "--config", "/app/config/config.yaml" ]
     volumes:
-      - ./das-database/config:/app/config
+      - ./das-account-indexer/config:/app/config
     networks:
       - mynetwork
 
 
-# docker-compose -f docker-compose-database.yaml up
+# docker-compose -f docker-compose-indexer.yaml up
 # docker build .
-# docker logs -f --tail=10 das-database-svr
+# docker logs -f --tail=10 das-indexer-svr

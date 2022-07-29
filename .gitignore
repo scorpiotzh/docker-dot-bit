@@ -16,3 +16,5 @@
 .idea
 /das-database
 docker-compose-database.yaml
+/das-account-indexer
+docker-compose-indexer.yaml
