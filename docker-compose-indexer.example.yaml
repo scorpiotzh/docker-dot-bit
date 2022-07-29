@@ -22,7 +22,7 @@ services:
     image: das-account-indexer
     restart: always
     working_dir: /app
-    entrypoint: [ "/app/das-database", "--config", "/app/config/config.yaml" ]
+    entrypoint: [ "/app/das-account-indexer", "--config", "/app/config/config.yaml" ]
     volumes:
       - ./das-account-indexer/config:/app/config
     networks:
