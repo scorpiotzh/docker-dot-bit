@@ -22,6 +22,9 @@ services:
     image: das-register
     restart: always
     working_dir: /app
+    ports:
+      - "8119:8119"
+      - "8120:8120"
     entrypoint: [ "/app/das-register", "--config", "/app/config/config.yaml" ]
     volumes:
       - ./das-register/config:/app/config
