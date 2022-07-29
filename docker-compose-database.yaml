@@ -1,0 +1,23 @@
+version: "3"
+
+networks:
+  mynetwork:
+    ipam:
+      driver: default
+      config:
+        - subnet: 182.17.0.0/16
+          gateway: 182.17.0.1
+
+services:
+  das-database:
+    build:
+      context: ./das-database
+      dockerfile: Dockerfile
+    image: das-database
+    restart: always
+    working_dir: /app
+    entrypoint: [ "/app/das-database", "--config", "/app/config/config.yaml" ]
+    volumes:
+      - ./das-database/config:/app/config
+    networks:
+      - mynetwork
