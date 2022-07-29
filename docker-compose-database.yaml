@@ -15,6 +15,7 @@ networks:
 
 services:
   das-database:
+    container_name: das-database-svr
     build:
       context: ./das-database
       dockerfile: Dockerfile
@@ -26,3 +27,7 @@ services:
       - ./das-database/config:/app/config
     networks:
       - mynetwork
+
+
+# docker-compose -f docker-compose-database.yaml up
+# docker build .
