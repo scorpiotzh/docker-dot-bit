@@ -15,14 +15,14 @@ networks:
 
 services:
   das-account-indexer:
-    container_name: das-indexer-svr
+    container_name: das-account-indexer-svr
     build:
       context: ./das-account-indexer
       dockerfile: Dockerfile
     image: das-account-indexer
     restart: always
     working_dir: /app
-    entrypoint: [ "/app/das-account-indexer", "--config", "/app/config/config.yaml" ]
+    entrypoint: [ "/app/das-indexer", "--config", "/app/config/config.yaml" ]
     volumes:
       - ./das-account-indexer/config:/app/config
     networks:
