@@ -1,0 +1,34 @@
+version: "3"
+
+#networks:
+#  mynetwork:
+#    ipam:
+#      driver: default
+#      config:
+#        - subnet: 182.17.0.0/16
+#          gateway: 182.17.0.1
+
+networks:
+  mynetwork:
+    external:
+      name: bit-env_mynetwork
+
+services:
+  das-register:
+    container_name: das-register-svr
+    build:
+      context: ./das-register
+      dockerfile: Dockerfile
+    image: das-register
+    restart: always
+    working_dir: /app
+    entrypoint: [ "/app/das-register", "--config", "/app/config/config.yaml" ]
+    volumes:
+      - ./das-register/config:/app/config
+    networks:
+      - mynetwork
+
+
+# docker-compose -f docker-compose-register.yaml up
+# docker build .
+# docker logs -f --tail=10 das-register-svr

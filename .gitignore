@@ -18,3 +18,5 @@
 docker-compose-database.yaml
 /das-account-indexer
 docker-compose-indexer.yaml
+/das-register
+docker-compose-register.yaml
