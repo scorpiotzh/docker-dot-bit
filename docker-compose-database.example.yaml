@@ -31,6 +31,6 @@ services:
       - mynetwork
 
 
-# docker-compose -f docker-compose-database.yaml up
+# docker-compose -f docker-compose-database.yaml up -d
 # docker build .
 # docker logs -f --tail=10 das-database-svr
